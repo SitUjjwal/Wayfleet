@@ -48,3 +48,5 @@ next-env.d.ts
 
 # leftover create-next-app scaffold (npm rejects capital package names)
 /wayfleet
+.env*
+!.env.example
