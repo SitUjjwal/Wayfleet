@@ -53,15 +53,13 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            {HERO_VEHICLE_PHOTOS.map((photo, index) => (
+            {HERO_VEHICLE_PHOTOS.map((photo) => (
               <VehiclePhoto
                 key={photo.title}
                 src={photo.image}
                 alt={photo.title}
                 loading="eager"
-                className={`h-36 w-full rounded-2xl object-cover shadow-sm sm:h-44 ${
-                  index % 2 === 1 ? "mt-6" : ""
-                }`}
+                className="aspect-[4/3] h-auto w-full rounded-2xl object-cover shadow-sm"
               />
             ))}
           </div>

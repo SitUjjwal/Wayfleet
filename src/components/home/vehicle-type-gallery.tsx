@@ -95,19 +95,19 @@ export function VehicleTypeGallery() {
           See all vehicles
         </a>
       </div>
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
         {HOME_VEHICLE_TYPES.map((item) => (
-          <li key={item.title}>
+          <li key={item.title} className="h-full">
             <a
               href={item.href}
-              className="group block overflow-hidden rounded-2xl border border-line bg-paper-strong shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper-strong shadow-sm transition hover:shadow-md"
             >
               <VehiclePhoto
                 src={item.image}
                 alt={`${item.title} for booking`}
-                className="h-36 w-full object-cover transition duration-300 group-hover:scale-[1.03] sm:h-40"
+                className="aspect-[4/3] h-auto w-full object-cover transition duration-300 group-hover:scale-[1.03]"
               />
-              <div className="p-4">
+              <div className="flex flex-1 flex-col p-3 sm:p-4">
                 <p className="font-semibold text-navy">{item.title}</p>
                 <p className="mt-1 text-sm text-muted">{item.blurb}</p>
               </div>
