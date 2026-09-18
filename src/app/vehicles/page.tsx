@@ -71,8 +71,8 @@ export default async function VehiclesPage({ searchParams }: VehiclesPageProps) 
           Find a vehicle
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-muted">
-          Browse cars, SUVs, motorcycles, autos, e-rickshaws, buses, trains,
-          airplanes, and more.
+          Browse autos, bikes, cars, SUVs, e-rickshaws, tempos, mini trucks,
+          buses, trains, flights, and more.
         </p>
       </div>
       <VehicleFilters filters={displayFilters} />

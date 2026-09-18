@@ -12,14 +12,14 @@ import {
 export const CATEGORY_LABELS: Record<VehicleCategory, string> = {
   car: "Car",
   suv: "SUV",
-  van: "Van",
-  truck: "Truck",
+  van: "Tempo traveller",
+  truck: "Mini truck",
   bus: "Bus",
-  two_wheeler: "Motorcycle",
-  auto_rickshaw: "Auto",
+  two_wheeler: "Bike / Scooter",
+  auto_rickshaw: "Auto rickshaw",
   e_rickshaw: "E-rickshaw",
   train: "Train",
-  airplane: "Airplane",
+  airplane: "Flight",
   other: "Other",
 };
 

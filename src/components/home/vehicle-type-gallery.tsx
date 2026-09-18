@@ -1,62 +1,76 @@
-/* eslint-disable @next/next/no-img-element */
+import { VehiclePhoto } from "@/components/home/vehicle-photo";
+
 export const HOME_VEHICLE_TYPES = [
   {
-    title: "Car",
-    blurb: "Sedan and hatchback",
-    href: "/vehicles?category=car",
-    image:
-      "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Motorcycle",
-    blurb: "Bikes for city hops",
-    href: "/vehicles?category=two_wheeler",
-    image:
-      "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Auto",
-    blurb: "Quick three-wheeler",
+    title: "Auto rickshaw",
+    blurb: "City three-wheeler",
     href: "/vehicles?category=auto_rickshaw",
-    image:
-      "https://images.pexels.com/photos/2169052/pexels-photo-2169052.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/vehicles/auto.jpg",
   },
   {
-    title: "E-rickshaw",
-    blurb: "Quiet local rides",
-    href: "/vehicles?category=e_rickshaw",
-    image:
-      "https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=900",
+    title: "Bike / Scooter",
+    blurb: "Quick local hops",
+    href: "/vehicles?category=two_wheeler",
+    image: "/vehicles/bike.jpg",
   },
   {
-    title: "Bus",
-    blurb: "Group and route trips",
-    href: "/vehicles?category=bus",
-    image:
-      "https://images.unsplash.com/photo-1544620341-11cb2cd7c626?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Train",
-    blurb: "Longer city-to-city",
-    href: "/vehicles?category=train",
-    image:
-      "https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Airplane",
-    blurb: "When you need to fly",
-    href: "/vehicles?category=airplane",
-    image:
-      "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80",
+    title: "Car",
+    blurb: "Hatchback and sedan",
+    href: "/vehicles?category=car",
+    image: "/vehicles/car.jpg",
   },
   {
     title: "SUV",
     blurb: "Family and highway",
     href: "/vehicles?category=suv",
-    image:
-      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80",
+    image: "/vehicles/suv.jpg",
+  },
+  {
+    title: "E-rickshaw",
+    blurb: "Short neighbourhood rides",
+    href: "/vehicles?category=e_rickshaw",
+    image: "/vehicles/erickshaw.jpg",
+  },
+  {
+    title: "Tempo traveller",
+    blurb: "Group and outstation",
+    href: "/vehicles?category=van",
+    image: "/vehicles/van.jpg",
+  },
+  {
+    title: "Mini truck",
+    blurb: "Goods and cargo",
+    href: "/vehicles?category=truck",
+    image: "/vehicles/truck.jpg",
+  },
+  {
+    title: "Bus",
+    blurb: "Route and staff trips",
+    href: "/vehicles?category=bus",
+    image: "/vehicles/bus.jpg",
+  },
+  {
+    title: "Train",
+    blurb: "City-to-city travel",
+    href: "/vehicles?category=train",
+    image: "/vehicles/train.jpg",
+  },
+  {
+    title: "Flight",
+    blurb: "When you need to fly",
+    href: "/vehicles?category=airplane",
+    image: "/vehicles/airplane.jpg",
   },
 ] as const;
+
+export const HERO_VEHICLE_PHOTOS = HOME_VEHICLE_TYPES.filter((item) =>
+  [
+    "/vehicles?category=auto_rickshaw",
+    "/vehicles?category=two_wheeler",
+    "/vehicles?category=car",
+    "/vehicles?category=train",
+  ].includes(item.href),
+);
 
 export function VehicleTypeGallery() {
   return (
@@ -64,14 +78,14 @@ export function VehicleTypeGallery() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-            Multi-vehicle booking
+            India fleet
           </p>
           <h2 className="mt-2 text-2xl font-semibold tracking-tight text-navy sm:text-3xl">
-            Cars, bikes, autos, trains, and more
+            Every vehicle people book in India
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-muted">
-            Pick a type and see listings from vendors. Motorcycle, auto,
-            e-rickshaw, bus, train, and airplane sit next to cars and SUVs.
+            Auto, bike, car, SUV, e-rickshaw, tempo, mini truck, bus, train, and
+            flight — tap a photo to browse listings.
           </p>
         </div>
         <a
@@ -81,18 +95,17 @@ export function VehicleTypeGallery() {
           See all vehicles
         </a>
       </div>
-      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
         {HOME_VEHICLE_TYPES.map((item) => (
           <li key={item.title}>
             <a
               href={item.href}
               className="group block overflow-hidden rounded-2xl border border-line bg-paper-strong shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
             >
-              <img
+              <VehiclePhoto
                 src={item.image}
                 alt={`${item.title} for booking`}
-                className="h-40 w-full object-cover transition duration-300 group-hover:scale-[1.03]"
-                loading="lazy"
+                className="h-36 w-full object-cover transition duration-300 group-hover:scale-[1.03] sm:h-40"
               />
               <div className="p-4">
                 <p className="font-semibold text-navy">{item.title}</p>

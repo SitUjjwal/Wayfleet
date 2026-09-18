@@ -1,29 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
-import { VehicleTypeGallery } from "@/components/home/vehicle-type-gallery";
-
-const HERO_PHOTOS = [
-  {
-    src: "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=700&q=80",
-    alt: "Car",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=700&q=80",
-    alt: "Motorcycle",
-  },
-  {
-    src: "https://images.pexels.com/photos/2169052/pexels-photo-2169052.jpeg?auto=compress&cs=tinysrgb&w=700",
-    alt: "Auto rickshaw",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=700&q=80",
-    alt: "Airplane",
-  },
-];
+import {
+  HERO_VEHICLE_PHOTOS,
+  VehicleTypeGallery,
+} from "@/components/home/vehicle-type-gallery";
+import { VehiclePhoto } from "@/components/home/vehicle-photo";
 
 const steps = [
   {
     title: "Choose a vehicle type",
-    body: "Car, motorcycle, auto, e-rickshaw, bus, train, or airplane — tap a photo and browse listings.",
+    body: "Auto, bike, car, SUV, e-rickshaw, tempo, bus, train, or flight — tap a photo and browse listings.",
   },
   {
     title: "Book and pay",
@@ -43,14 +27,14 @@ export default function HomePage() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:py-20">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.18em] text-copper">
-              Multi-vehicle booking
+              India multi-vehicle booking
             </p>
             <h1 className="mt-4 max-w-xl text-4xl font-semibold tracking-tight text-navy sm:text-5xl sm:leading-tight">
-              Book a car, bike, auto, train, or flight in one place.
+              Book an auto, bike, car, train, or flight in one place.
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-muted sm:text-lg">
-              Wayfleet is a marketplace for many vehicle types — from e-rickshaws
-              and motorcycles to buses, trains, and airplanes.
+              Wayfleet is built for India — autos and e-rickshaws next to
+              cars, tempos, buses, trains, and flights.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -69,11 +53,12 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-2 gap-3">
-            {HERO_PHOTOS.map((photo, index) => (
-              <img
-                key={photo.alt}
-                src={photo.src}
-                alt={photo.alt}
+            {HERO_VEHICLE_PHOTOS.map((photo, index) => (
+              <VehiclePhoto
+                key={photo.title}
+                src={photo.image}
+                alt={photo.title}
+                loading="eager"
                 className={`h-36 w-full rounded-2xl object-cover shadow-sm sm:h-44 ${
                   index % 2 === 1 ? "mt-6" : ""
                 }`}

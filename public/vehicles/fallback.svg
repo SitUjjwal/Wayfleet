@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Vehicle">
+  <rect width="800" height="500" fill="#e8eef3"/>
+  <rect x="0" y="360" width="800" height="140" fill="#d5dee6"/>
+  <circle cx="250" cy="370" r="48" fill="#1e3a4c"/>
+  <circle cx="250" cy="370" r="22" fill="#c5d0d8"/>
+  <circle cx="540" cy="370" r="48" fill="#1e3a4c"/>
+  <circle cx="540" cy="370" r="22" fill="#c5d0d8"/>
+  <path d="M140 360 L210 250 H470 L620 360 Z" fill="#0f766e"/>
+  <rect x="140" y="300" width="480" height="70" fill="#134e4a"/>
+</svg>
