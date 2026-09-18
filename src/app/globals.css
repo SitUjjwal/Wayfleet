@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0f172a;
+  --navy-deep: #020617;
+  --paper: #f4f7fb;
+  --paper-strong: #ffffff;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --copper: #0d9488;
+  --copper-deep: #0f766e;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #e11d48;
+  --radius: 1rem;
+  --radius-sm: 0.625rem;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-paper: var(--paper);
+  --color-paper-strong: var(--paper-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-copper: var(--copper);
+  --color-copper-deep: var(--copper-deep);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --radius-card: var(--radius);
+  --radius-control: var(--radius-sm);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 480px at 90% -10%, rgb(13 148 136 / 0.12), transparent 55%),
+    radial-gradient(900px 420px at -10% 20%, rgb(15 23 42 / 0.05), transparent 50%),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: rgb(13 148 136 / 0.22);
+  color: var(--navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
